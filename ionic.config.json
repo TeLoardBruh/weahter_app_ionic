@@ -1,0 +1,8 @@
+{
+  "name": "deweatherapp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

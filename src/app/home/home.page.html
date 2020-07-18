@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      DeWeatherApp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+
+        <ion-searchbar placeholder="Search city" (ionChange)="searchCity($event)"></ion-searchbar>
+
+        
+        <ion-card *ngIf="weather" class="ion-text-center" color="primary">
+          <ion-card-header >
+            <ion-card-subtitle>{{weather.main.temp}} °c</ion-card-subtitle>
+            <ion-card-title>{{weather.name}}</ion-card-title>
+          </ion-card-header>
+          <ion-img src="http://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png"></ion-img>
+          <ion-card-content>
+            <p>Humidity : {{weather.main.humidity}}</p>
+            <p>Min-Temp : {{weather.main.temp_min}} °c</p>
+            <p>Max-Temp : {{weather.main.temp_max}} °c</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
